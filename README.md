@@ -1,7 +1,5 @@
 # coastline_car_rental
 Coastline Car Rental is a PHP and MySQL web application where visitors can browse cars by pickup branch and view daily rates. A password-protected staff dashboard lets administrators add, edit, hide, and delete vehicle and branch listings.
-# Coastline Car Rental
-
 
 The public site lists visible rental branches and cars. Staff can manage both resources after signing in. Each car belongs to one branch.
 
