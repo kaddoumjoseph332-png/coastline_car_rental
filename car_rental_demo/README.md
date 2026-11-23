@@ -1,9 +1,5 @@
 # Coastline Car Rental
 
-IFT 421 · PHP and MySQL final project
-
-The public site lists visible rental branches and cars. Staff can manage both resources after signing in. Each car belongs to one branch.
-
 ## Run on Windows with XAMPP, MySQL Community Server, and phpMyAdmin
 
 1. Install [MySQL Community Server 8.4 LTS](https://dev.mysql.com/downloads/mysql/8.4.html) using the Windows MSI. In MySQL Configurator, choose TCP port **3307**, set an administrator password, and run MySQL as a Windows service. Start **Apache** in XAMPP. The XAMPP control panel's MySQL button starts its bundled MariaDB service. With separate ports, each database service can run independently.
