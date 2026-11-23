@@ -1,0 +1,155 @@
+:root {
+    color-scheme: light;
+    --navy: #101f2d;
+    --ink: #172b3d;
+    --muted: #536777;
+    --blue: #1459a5;
+    --surface: #f1f5f8;
+    --white: #fff;
+    --line: #d8e1e8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    color: var(--ink);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main { flex: 1; }
+a { color: var(--blue); }
+a:focus-visible { outline: 3px solid #5f9fef; outline-offset: 4px; }
+h1, h2, h3, p { margin: 0 0 0.6em; }
+h1, h2, h3 { line-height: 1.13; letter-spacing: -0.035em; }
+h1 { font-size: clamp(2.25rem, 6vw, 4.1rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); }
+h3 { font-size: 1.35rem; }
+
+.container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+.site-header { background: var(--white); }
+.header-row, .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 16px;
+}
+
+.wordmark { color: var(--navy); text-decoration: none; font-size: 1.35rem; font-weight: 820; letter-spacing: -0.045em; }
+.wordmark span { color: var(--blue); }
+.staff-link { font-weight: 650; color: var(--ink); text-decoration: none; }
+.staff-link:hover, .branch-nav a:hover { text-decoration: underline; }
+.branch-nav { display: flex; flex-wrap: wrap; gap: 0 24px; border-top: 1px solid var(--line); }
+.branch-nav a {
+    padding-block: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+.branch-nav .current { color: var(--blue); box-shadow: inset 0 -2px var(--blue); }
+
+.hero {
+    background: linear-gradient(90deg, #0c1b2b 0%, #0c1b2b 30%, rgba(12, 27, 43, 0.64) 55%, transparent 84%),
+                #132b40 url("../images/coastal-drive.webp") right 62% / 73% auto no-repeat;
+    color: var(--white);
+}
+.hero-copy { padding-block: clamp(50px, 8vw, 112px); }
+.hero h1 { margin-bottom: 16px; }
+.hero p { max-width: 31ch; color: #dce9f5; font-size: 1.1rem; margin-bottom: 23px; }
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 11px 18px;
+    border-radius: 7px;
+    color: var(--white);
+    background: var(--blue);
+    text-decoration: none;
+    font-weight: 700;
+}
+.button:hover { background: #103e75; }
+.hero .button { background: #e8f2ff; color: #142e51; }
+.hero .button:hover { background: white; }
+
+.section { padding-block: 46px 56px; }
+.section h2 { margin-bottom: 22px; }
+.section-banner { background: var(--navy); color: var(--white); padding-block: 38px; }
+.section-banner p { margin-bottom: 0; color: #cfdce8; }
+.section-banner .back-link { color: #cfebff; }
+.back-link { display: inline-block; margin-bottom: 18px; font-weight: 650; }
+
+.card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.listing-card, .detail-card, .booking-card, .empty-state {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--white);
+    padding: 22px;
+    overflow-wrap: anywhere;
+}
+.listing-card { display: flex; flex-direction: column; }
+.listing-card > p:not(.eyebrow), .description { color: var(--muted); }
+.listing-description, .description { white-space: pre-wrap; }
+.eyebrow {
+    color: var(--blue);
+    font-size: 0.775rem;
+    letter-spacing: 0.09em;
+    font-weight: 750;
+    text-transform: uppercase;
+}
+.card-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px 12px;
+    margin-top: auto;
+    padding-top: 12px;
+}
+.count { font-size: 0.88rem; color: var(--muted); }
+.text-link { text-decoration: none; font-weight: 700; font-size: 0.92rem; }
+.text-link:hover { text-decoration: underline; }
+.price { font-size: 1.35rem; font-weight: 790; letter-spacing: -0.03em; }
+.price small { color: var(--muted); font-size: 0.85rem; font-weight: 500; }
+.detail-grid { display: grid; grid-template-columns: 2fr 1fr; align-items: start; gap: 18px; }
+.detail-card, .booking-card { padding: clamp(22px, 4vw, 38px); }
+.detail-card h1 { font-size: clamp(2rem, 4.4vw, 3.5rem); }
+.booking-card .price { font-size: 2.5rem; }
+.booking-card .button { display: flex; }
+.contact { margin: 10px 0 0; text-align: center; color: var(--muted); }
+.specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    margin: 24px 0 0;
+    padding-top: 17px;
+    border-top: 1px solid var(--line);
+}
+.specs dt { font-size: 0.83rem; color: var(--muted); }
+.specs dd { margin: 0; font-weight: 700; }
+.site-footer { border-top: 1px solid var(--line); background: var(--white); color: var(--muted); }
+.footer-row > span { font-weight: 700; }
+
+@media (max-width: 850px) {
+    .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hero { background-size: auto, cover; }
+}
+
+@media (max-width: 570px) {
+    .container { width: calc(100% - 32px); }
+    .hero {
+        background-image: linear-gradient(90deg, rgba(12, 27, 43, 0.95), rgba(12, 27, 43, 0.55)), url("../images/coastal-drive.webp");
+        background-position: center, 62% 56%;
+    }
+    .branch-nav { gap: 0 15px; }
+    .branch-nav a { padding-block: 7px; }
+    .card-grid, .detail-grid { grid-template-columns: 1fr; }
+    .footer-row { align-items: flex-start; flex-direction: column; gap: 4px; }
+}
